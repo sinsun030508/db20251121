@@ -1,3 +1,21 @@
+# 모듈 추가 
+npm install -g nodemon 
+
+# package.json 수정 
+npm run start 수정 
+
+# 테스트 소스 추가 
+/test
+     /users
+     /users/:userId/todos
+     /users/:userId/todos-page
+     /todoInsertView
+     /todoInsertPost
+     /todoModifyView/:todoId
+     /todoModifyPost/:todoId
+     /todoDeletePost/:todoId
+
+
 # echo "# nodejs-todos" >> README.md
 git init
 git add README.md
