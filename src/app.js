@@ -24,7 +24,6 @@ const indexRouter = require('./routes/index');
 const todosRouter = require('./routes/todos');
 const adminRouter = require('./routes/admin');
 const testRouter = require('./routes/test');
-
 app.use('/', indexRouter);
 app.use('/todos', todosRouter);
 app.use('/admin', adminRouter);

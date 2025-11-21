@@ -28,6 +28,9 @@
                         <span><%= todo.user_id %></span>
                         <span><%= todo.title %></span>
                         <span><%= new Date(todo.created_at).toLocaleString('ko-KR') %></span>
+                        <span><%= todo.user_name %></span>
+                        <span><%= todo.password %></span>
+                        <span><%= todo.email %></span>
                     </li>
                 <% }); %>
             <% } else { %>
