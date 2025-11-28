@@ -149,3 +149,155 @@ a.delete:hover {
     background-color: #5a6268;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: #2c3e50;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  color: #777;
+}
+
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.board-table th,
+.board-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.board-table th {
+  background: #f0f0f0;
+}
+
+.board-table .empty {
+  text-align: center;
+  color: #888;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.btn.danger {
+  background: #e74c3c;
+}
+
+.btn.primary {
+  background: #27ae60;
+}
+
+.post-view h3 {
+  margin-top: 0;
+}
+
+.post-view .meta {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.post-view .meta span {
+  margin-right: 10px;
+}
+
+.post-view .content {
+  white-space: pre-wrap;
+}
+
+.post-form .form-row {
+  margin-bottom: 10px;
+}
+
+.post-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.post-form input[type="text"],
+.post-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px;
+}
+
+.post-form .buttons {
+  text-align: right;
+}
+
+.search-form {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.search-form input[type="text"] {
+  padding: 4px;
+}
+
+.pagination {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  padding: 3px 7px;
+  margin: 0 2px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+}
+
+.pagination .current {
+  background: #3498db;
+  color: #fff;
+  border-color: #3498db;
+}

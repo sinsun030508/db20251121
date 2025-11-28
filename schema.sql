@@ -1,5 +1,6 @@
 create database tododb DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
+
 -- Drop tables if they exist to prevent errors on re-creation
 DROP TABLE IF EXISTS todos;
 DROP TABLE IF EXISTS users;

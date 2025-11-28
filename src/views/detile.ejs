@@ -1,0 +1,27 @@
+<%- include('layout', {
+  title: '게시글 상세',
+  body: `
+<section>
+  <h2>게시글 상세</h2>
+
+  <div class="post-view">
+    <h3>${post.title}</h3>
+    <div class="meta">
+      <span>작성자: ${post.writer || ''}</span>
+      <span>작성일: ${post.created_at.toISOString().slice(0, 19).replace('T', ' ')}</span>
+      <span>조회수: ${post.hit}</span>
+    </div>
+    <div class="content">
+      ${post.content.replace(/\\n/g, '<br>')}
+    </div>
+  </div>
+
+  <div class="buttons">
+    <a href="/board" class="btn">목록</a>
+    <a href="/board/${post.id}/edit" class="btn">수정</a>
+    <form action="/board/${post.id}/delete" method="post" style="display:inline;" onsubmit="return confirm('정말 삭제하시겠습니까?');">
+      <button type="submit" class="btn danger">삭제</button>
+    </form>
+  </div>
+</section>
+` }) %>

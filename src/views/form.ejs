@@ -1,0 +1,31 @@
+<%
+  const isEdit = mode === 'edit';
+  const actionUrl = isEdit ? `/board/${post.id}/edit` : '/board/new';
+%>
+
+<%- include('layout', {
+  title: isEdit ? '게시글 수정' : '게시글 작성',
+  body: `
+<section>
+  <h2>${isEdit ? '게시글 수정' : '게시글 작성'}</h2>
+
+  <form action="${actionUrl}" method="post" class="post-form">
+    <div class="form-row">
+      <label>제목</label>
+      <input type="text" name="title" value="${post.title || ''}" required>
+    </div>
+    <div class="form-row">
+      <label>작성자</label>
+      <input type="text" name="writer" value="${post.writer || ''}">
+    </div>
+    <div class="form-row">
+      <label>내용</label>
+      <textarea name="content" rows="10" required>${post.content || ''}</textarea>
+    </div>
+    <div class="form-row buttons">
+      <button type="submit" class="btn primary">${isEdit ? '수정' : '등록'}</button>
+      <a href="${isEdit ? `/board/${post.id}` : '/board'}" class="btn">취소</a>
+    </div>
+  </form>
+</section>
+` }) %>

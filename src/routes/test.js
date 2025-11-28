@@ -1,26 +1,40 @@
+// src/routes/test.js
 const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 
 // Todo list for test
-router.get('/', (req, res) => {
-    const query = 'select * from todos, users where todos.user_id = users.user_id and title like "%test%" ORDER BY todo_id DESC';
-    const query2 = 'test' + '%" ORDER BY todo_id DESC';
-    const query3 = query1 + query2;
-    console.log(query3);
-    db.query(query3, (err, results) => {
-        if (err) throw err;
+router.get('/', async (req, res, next) => {
+    try {
+        // 검색어 고정(테스트용)
+        const keyword = 'test';
+
+        // LIKE 검색은 ? + '%값%' 로 파라미터 바인딩
+        const sql = `
+            SELECT *
+            FROM todos, users
+            WHERE todos.user_id = users.user_id
+              AND title LIKE ?
+            ORDER BY todo_id DESC
+        `;
+
+        const [results] = await db.query(sql, [`%${keyword}%`]);
+
         res.render('test/todos-list', {
             title: 'Test Todo List',
             user: req.session.user,
             todos: results
         });
-    });
+    } catch (err) {
+        console.error(err);
+        next(err); // 에러 미들웨어로 넘김
+    }
 });
+
 
 // Get all users
 router.get('/users', (req, res) => {
-    const query = 'SELECT * FROM users';
+    const query = 'SELECT * FROM users'; 
     db.query(query, (err, users) => {
         if (err) throw err;
         res.render('test/users-list', {
